@@ -25,17 +25,22 @@
          (require '~namespace-symbol)
          (is (= ~answer
                 (apply (resolve '~fn-symbol)
-                       ~args)))))))
+                       ~(vec args))))))))
 
 (defn define-single-test [number answer args]
   (eval (test-defining-list number answer args)))
 
 (defn def-all-tests [& tests]
-  (doseq [[number answer args] tests]
+  (doseq [[number answer & args] tests]
     (define-single-test number answer args)))
 
 (def-all-tests
-  [1 233168 [[3 5] 1000]]
-  [2 4613732 [4e6]]
-  [3 6857 [600851475143]])
+  [1 233168 [3 5] 1000]
+  [2 4613732 4e6]
+  [3 6857 600851475143]
+  [4 906609 3]
+  [5 232792560 20]
+  [6 25164150 100]
+  [7 104743 10001])
 
+(run-tests)
