@@ -11,7 +11,7 @@
      (->> (for [a nums
                 b nums
                 :let [product (* a b)]
-                :when (lib/palindrome? product)]
+                :when (lib/palindrome? (str product))]
             product)
           sort
           last))))

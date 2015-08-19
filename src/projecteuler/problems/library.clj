@@ -32,16 +32,15 @@
   (apply * xs))
 
 (defn sum
-  "Returns the product of xs"
+  "Returns the sum of xs"
   [xs]
   (apply + xs))
 
 (defn palindrome?
   "Returns whether coll is a palindrome"
-  [x]
-  (let [string (str x)]
-    (= string
-       (str/reverse string))))
+  [coll]
+  (= (seq coll)
+     (reverse coll)))
 
 (defn pow
   "Raises base to exp exponent"

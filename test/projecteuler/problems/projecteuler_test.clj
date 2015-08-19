@@ -11,7 +11,7 @@
     `(deftest ~test-name
        (testing ~test-description
          (require '~namespace-symbol :reload-all)
-         (is (= ~answer
+         (is (= ~answer 
                 (apply (resolve '~fn-symbol)
                        ~(vec args))))))))
 
