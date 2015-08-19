@@ -1,17 +1,5 @@
 (ns projecteuler.problems.projecteuler-test
-  (:require [clojure.test :refer :all]
-            [clojure.pprint :as pp]))
-
-#_(deftest project-euler-tests
-    (testing "Project Euler"
-      (are [spec]
-          (let [[problem-number answer & args] spec
-                namespace (str "projecteuler.problems." problem-number)]
-            (require (symbol namespace))
-            answer
-            (apply (resolve (symbol namespace (str "problem-" problem-number))) args))
-        [1 233168 [3 5] 1000]
-        [2 4613732 4e6])))
+  (:require [clojure.test :refer :all]))
 
 (defn test-defining-list [number answer args] 
   (let [fn-name (str "problem-" number)
@@ -22,7 +10,7 @@
         test-description (str "Project Euler " number)]
     `(deftest ~test-name
        (testing ~test-description
-         (require '~namespace-symbol)
+         (require '~namespace-symbol :reload-all)
          (is (= ~answer
                 (apply (resolve '~fn-symbol)
                        ~(vec args))))))))

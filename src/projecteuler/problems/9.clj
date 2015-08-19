@@ -1,4 +1,5 @@
-(ns projecteuler.problems.9)
+(ns projecteuler.problems.9
+  (:require [projecteuler.problems.library :as lib]))
 
 (defn potential-a-b-c [limit]
   (for [a (range 1 limit)
@@ -7,21 +8,13 @@
         :while (< 0 a b c (inc limit))]
     [a b c]))
 
-(defn square [x]
-  (* x x))
-
-(defn pythagorean? [a b c]
-  (== (+ (square a)
-         (square b))
-      (square c)))
-
 (defn problem-9
   ([]
    (problem-9 1000))
   ([n]
    (->> (potential-a-b-c n)
-        (filter (partial apply pythagorean?))
+        (filter (partial apply lib/pythagorean?))
         first
-        (apply *))))
+        lib/product)))
 
 #_(problem-9)

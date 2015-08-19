@@ -1,16 +1,13 @@
-(ns projecteuler.problems.2)
-
-(def fibs
-  (lazy-cat [1 2]
-            (map + fibs (rest fibs))))
+(ns projecteuler.problems.2
+  (:require [projecteuler.problems.library :as lib]))
 
 (defn problem-2
   ([]
    (problem-2 4e6))
   ([n]
-   (->> fibs
+   (->> lib/fibs
         (take-while #(<= % n))
         (filter even?)
-        (apply +))))
+        lib/sum)))
 
 #_(problem-2)

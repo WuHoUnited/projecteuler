@@ -1,20 +1,15 @@
-(ns projecteuler.problems.6)
-
-(defn square [n]
-  (* n n))
-
-(def sum
-  (partial apply +))
+(ns projecteuler.problems.6
+  (:require [projecteuler.problems.library :as lib]))
 
 (defn sum-of-squares [coll]
   (->> coll
-       (map square)
-       sum))
+       (map lib/square)
+       lib/sum))
 
 (defn square-of-sums [coll]
   (->> coll
-       sum
-       square))
+       lib/sum
+       lib/square))
 
 (defn problem-6
   ([]
