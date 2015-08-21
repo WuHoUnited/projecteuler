@@ -94,3 +94,32 @@
   (== (+ (square a)
          (square b))
       (square c)))
+
+(defn tails
+  "Returns all the tails of a sequence"
+  [coll]
+  (->> coll
+       (iterate rest)
+       (take-while seq)))
+
+(defn subseqs-of-length
+  "Returns all subsequences of a coll that have length n"
+  [n coll]
+  (->> coll
+       tails
+       (map (partial take n))
+       (filter (fn [seq]
+                 (= n (count seq))))))
+
+(defprotocol IToInt
+  (to-int [x]))
+
+(extend-protocol IToInt
+  String
+  (to-int [string]
+    (let [trimmed (->> string
+                       (drop-while #{\0})
+                       (apply str))]
+      (if (seq trimmed)
+        (read-string trimmed)
+        0))))
