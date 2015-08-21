@@ -50,7 +50,7 @@
     (if (zero? exp)
       acc
       (recur (dec exp)
-             (* acc base)))))
+             (*' acc base)))))
 
 (defn gcd
   "Returns the greatest common divisor of x and y"
