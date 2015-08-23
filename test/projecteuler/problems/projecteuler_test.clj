@@ -42,6 +42,7 @@
   [18 1074 "resources/18.txt"]
   [20 648 100]
   [22 871198282 "resources/22.txt"]
+  [25 4782 1000]
   [67 7273 "resources/67.txt"])
 
 #_(run-tests)

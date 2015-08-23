@@ -68,8 +68,8 @@
 
 (def fibs
   "A lazy, ordered sequence of fibonacci numbers"
-  (lazy-cat [1 2]
-            (map + fibs (rest fibs))))
+  (lazy-cat [1 1]
+            (map +' fibs (rest fibs))))
 
 (declare prime?)
 
