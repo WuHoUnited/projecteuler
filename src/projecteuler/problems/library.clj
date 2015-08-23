@@ -112,7 +112,8 @@
                  (= n (count seq))))))
 
 (defprotocol IToInt
-  (to-int [x]))
+  "Protocol for things which can be converted to integers"
+  (to-int [this] "converts this to an integer"))
 
 (extend-protocol IToInt
   String
@@ -123,3 +124,8 @@
       (if (seq trimmed)
         (read-string trimmed)
         0))))
+
+(defn factorial
+  "Calculates the factorial of n"
+  [n]
+  (reduce *' (range 1 (inc n))))
