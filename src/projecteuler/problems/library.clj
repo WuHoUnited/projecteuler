@@ -1,5 +1,5 @@
 (ns projecteuler.problems.library
-  (:require [clojure.string :as str]))
+  (:require [clojure.string :as string]))
 
 (defn divisible-by?
   "Returns true if dividend is divisible by divisor"
@@ -129,3 +129,43 @@
   "Calculates the factorial of n"
   [n]
   (reduce *' (range 1 (inc n))))
+
+
+(defn words
+  "Returns a sequence of the words of string.
+  A word is composed of characters separated by whitespace"
+  [string]
+  (re-seq #"\S+" string))
+
+(defn load-ints-2d
+  "Returns a 2-dimensional sequence of integers which are stored in file-location"
+  [file-location]
+  (->> file-location
+       slurp
+       string/split-lines
+       (map words)
+       (map #(map to-int %))))
+
+(defn- calculate-maximum-triangle-sum
+  "Calculates the maximum sum from top-bottom in a triangle as per problem 18.
+  triangle must be a 2-dimensional sequence of numbers with the top of the
+  triangle being first"
+  [triangle]
+  (->> triangle
+       reverse
+       (reduce (fn [previous-sums row]
+                 (map-indexed
+                  (fn [index value]
+                    (+ value (max (nth previous-sums index)
+                                  (nth previous-sums (inc index)))))
+                  row))
+               (repeat 0))
+       first))
+
+(defn maximum-triangle-sum
+  "Calculates the maximum sum from top-bottom in a triangle as per problem 19.
+  file-path must contain the contents of a triangle as provided by project euler."
+  [file-path]
+  (->> file-path
+       load-ints-2d
+       calculate-maximum-triangle-sum))

@@ -1,16 +1,5 @@
 (ns projecteuler.problems.11
-  (:require [clojure.string :as string]
-            [projecteuler.problems.library :as lib]))
-
-(defn words [string]
-  (re-seq #"\S+" string))
-
-(defn read-matrix [file-location]
-  (->> file-location
-       slurp
-       string/split-lines
-       (map words)
-       (map #(map lib/to-int %))))
+  (:require [projecteuler.problems.library :as lib]))
 
 (defn trim-first-column [matrix]
   (map rest matrix))
@@ -60,7 +49,7 @@
   ([] (problem-11 "resources/11.txt"))
   ([file-location] 
    (->> file-location
-        read-matrix
+        lib/load-ints-2d
         all-lines
         (mapcat (partial lib/subseqs-of-length 4))
         (map lib/product)
