@@ -82,10 +82,11 @@
 (defn prime?
   "Returns whether n is prime"
   [n]
-  (->> primes
-       (take-while #(<= (square %) n))
-       (divides-some? n)
-       not))
+  (and (< 1 n)
+       (->> primes
+            (take-while #(<= (square %) n))
+            (divides-some? n)
+            not)))
 
 (defn pythagorean?
   "Returns whether a b c are the sides of a pythagorean triangle with
