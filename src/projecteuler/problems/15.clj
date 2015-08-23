@@ -7,7 +7,7 @@
              (zero? y))
        1
        (+ (ways x (dec y))
-          (ways y (dec x)))))))
+          (ways (dec x) y))))))
 
 (defn problem-15
   ([]
