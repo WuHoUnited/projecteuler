@@ -5,12 +5,13 @@
     (quot n 2)
     (inc (* n 3))))
 
-(defn collatz [n]
-  (concat
-   (->> n
-        (iterate collatz-step)
-        (take-while (partial not= 1)))
-   [1]))
+(def collatz
+  (memoize
+   (fn [n]
+     (if (== 1 n)
+       '(1)
+       (conj (collatz (collatz-step n))
+             n)))))
 
 (defn problem-14
   ([]
@@ -23,13 +24,3 @@
         ffirst)))
 
 #_(problem-14)
-
-
-
-
-
-
-
-
-
-
