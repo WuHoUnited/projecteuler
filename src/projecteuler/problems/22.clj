@@ -2,11 +2,11 @@
   (:require [projecteuler.problems.library :as lib]))
 
 (defn char-score [c]
-  (inc (- c (int \A))))
+  (inc (- (int c)
+          (int \A))))
 
 (defn name-score [string]
   (->> string
-       (map int)
        (map char-score)
        lib/sum))
 
