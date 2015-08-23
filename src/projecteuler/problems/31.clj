@@ -15,13 +15,3 @@
    (ways (seq coins) amount)))
 
 #_(problem-31)
-
-
-
-
-
-
-
-
-
-
