@@ -30,4 +30,4 @@
         first
         lib/product)))
 
-#_(problem-27 1000 1000)
+#_(problem-27)
