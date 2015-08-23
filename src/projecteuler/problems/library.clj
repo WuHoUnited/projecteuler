@@ -169,3 +169,18 @@
   (->> file-path
        load-ints-2d
        calculate-maximum-triangle-sum))
+
+(defn divisors
+  "The divisors of n, sorted from smallest to largest. Includes n itself."
+  [n]
+  (->> (range 1 (inc n))
+       (filter (partial divisible-by? n))))
+
+(def divisor-sum
+  "The sum of divisors of a number not including the number itself"
+  (memoize
+   (fn [n]
+     (-> n
+         divisors
+         butlast
+         sum))))

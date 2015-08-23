@@ -1,10 +1,6 @@
 (ns projecteuler.problems.12
   (:require [projecteuler.problems.library :as lib]))
 
-(defn divisors [n]
-  (->> (range 1 (inc n))
-       (filter (partial lib/divisible-by? n))))
-
 (def triangle-numbers
   (->> (range)
        rest
@@ -15,7 +11,7 @@
    (problem-12 500))
   ([n]
    (->> triangle-numbers
-        (filter #(< n (-> % divisors count)))
+        (filter #(< n (-> % lib/divisors count)))
         first)))
 
 #_(problem-12 500)
