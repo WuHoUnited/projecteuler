@@ -14,12 +14,16 @@
        some?))
 
 (defn digits
-  "Returns the digits of n"
-  [n]
-  (let [chars (-> n str seq)]
-    (map (fn [char]
-           (read-string (str char)))
-         chars)))
+    "Returns the digits of n"
+    [n]
+    (if (zero? n)
+      0
+      (loop [n n
+             acc ()]
+        (if (zero? n)
+          acc
+          (recur (quot n 10)
+                 (conj acc (mod n 10)))))))
 
 (defn square
   "Returns n squared"
