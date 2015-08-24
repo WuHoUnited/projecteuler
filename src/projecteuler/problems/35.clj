@@ -22,12 +22,8 @@
 (defn contains-zero? [n]
   (contains? (set (lib/digits n)) 0))
 
-(defn circular-prime? [n]
-  (let [digits (lib/digits n)
-        length (count digits)]))
-
-(defn all-rotations-prime? [n]
-  (->> n
+(defn circular-prime? [prime]
+  (->> prime
        get-rotations-number
        rest
        (every? lib/prime?)))
@@ -39,7 +35,7 @@
    (->> lib/primes
         (take-while #(< % limit))
         (filter (complement contains-zero?))
-        (filter all-rotations-prime?)
+        (filter circular-prime?)
         count)))
 
 #_(problem-35)
