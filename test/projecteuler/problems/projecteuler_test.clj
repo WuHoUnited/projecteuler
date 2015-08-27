@@ -55,6 +55,7 @@
   [36 872187 1e6]
   [40 210 7]
   [42 162 "resources/42.txt"]
+  [50 997651 1e6]
   [67 7273 "resources/67.txt"])
 
 #_(time (run-tests))
