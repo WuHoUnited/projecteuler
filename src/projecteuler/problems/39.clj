@@ -15,8 +15,7 @@
   ([]
    (problem-39 1000))
   ([limit]
-   (->> (generate-triangles limit)
-        (filter (partial apply lib/pythagorean?))
+   (->> (generate-triangles limit) 
         (map (partial apply +))
         frequencies
         (apply max-key second)
