@@ -14,7 +14,7 @@
        (range 1 (inc (count digs))))))
 
 (defn problem-41 []
-  (->> (range limit 1 -1)
+  (->> (range limit 1 -2)
        (filter #(and (pandigital? %)
                      (lib/prime? %)))
        first))
