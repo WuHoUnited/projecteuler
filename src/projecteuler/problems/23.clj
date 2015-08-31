@@ -1,5 +1,5 @@
 (ns projecteuler.problems.23
-  (:require [projecteuler.problems.library :as lib]))
+  (:require [projecteuler.library :as lib]))
 
 (def abundant?
   (memoize

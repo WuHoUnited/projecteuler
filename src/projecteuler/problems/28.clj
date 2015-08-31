@@ -1,5 +1,5 @@
 (ns projecteuler.problems.28
-  (:require [projecteuler.problems.library :as lib]))
+  (:require [projecteuler.library :as lib]))
 
 (defn sum-for-square [side]
   (if (== 1 side)

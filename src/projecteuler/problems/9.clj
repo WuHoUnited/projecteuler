@@ -1,5 +1,5 @@
 (ns projecteuler.problems.9
-  (:require [projecteuler.problems.library :as lib]))
+  (:require [projecteuler.library :as lib]))
 
 (defn potential-a-b-c [limit]
   (for [a (range 1 limit)

@@ -1,5 +1,5 @@
 (ns projecteuler.problems.35
-  (:require [projecteuler.problems.library :as lib]))
+  (:require [projecteuler.library :as lib]))
 
 (defn rotate-coll [coll]
   (as-> coll it

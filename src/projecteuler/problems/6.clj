@@ -1,5 +1,5 @@
 (ns projecteuler.problems.6
-  (:require [projecteuler.problems.library :as lib]))
+  (:require [projecteuler.library :as lib]))
 
 (defn sum-of-squares [coll]
   (->> coll

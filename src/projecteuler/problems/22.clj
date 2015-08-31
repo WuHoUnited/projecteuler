@@ -1,5 +1,5 @@
 (ns projecteuler.problems.22
-  (:require [projecteuler.problems.library :as lib]))
+  (:require [projecteuler.library :as lib]))
 
 (defn char-score [c]
   (inc (- (int c)

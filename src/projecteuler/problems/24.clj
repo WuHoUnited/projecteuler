@@ -1,5 +1,5 @@
 (ns projecteuler.problems.24
-  (:require [projecteuler.problems.library :as lib]))
+  (:require [projecteuler.library :as lib]))
 
 (defn remove-index [index coll] 
   (let [[beginning ending] (split-at index coll)]

@@ -1,5 +1,5 @@
 (ns projecteuler.problems.42
-  (:require [projecteuler.problems.library :as lib]))
+  (:require [projecteuler.library :as lib]))
 
 (defn triangle-numbers []
   (->> (range)

@@ -1,5 +1,5 @@
 (ns projecteuler.problems.37
-  (:require [projecteuler.problems.library :as lib]))
+  (:require [projecteuler.library :as lib]))
 
 (defn heads
   [coll]

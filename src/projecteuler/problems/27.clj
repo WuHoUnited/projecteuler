@@ -1,5 +1,5 @@
 (ns projecteuler.problems.27
-  (:require [projecteuler.problems.library :as lib]))
+  (:require [projecteuler.library :as lib]))
 
 (defn make-quadratic [a b]
   (fn [n]

@@ -1,5 +1,5 @@
 (ns projecteuler.problems.21
-  (:require [projecteuler.problems.library :as lib]))
+  (:require [projecteuler.library :as lib]))
 
 (defn amicable? [n]
   (let [div-sum (lib/divisor-sum n)]

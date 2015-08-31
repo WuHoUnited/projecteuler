@@ -1,5 +1,5 @@
 (ns projecteuler.problems.13
-  (:require [projecteuler.problems.library :as lib]
+  (:require [projecteuler.library :as lib]
             [clojure.string :as string]))
 
 (defn problem-13

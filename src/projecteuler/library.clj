@@ -1,4 +1,4 @@
-(ns projecteuler.problems.library
+(ns projecteuler.library
   (:require [clojure.string :as string]))
 
 (defn divisible-by?

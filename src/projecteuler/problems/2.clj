@@ -1,5 +1,5 @@
 (ns projecteuler.problems.2
-  (:require [projecteuler.problems.library :as lib]))
+  (:require [projecteuler.library :as lib]))
 
 (defn problem-2
   ([]

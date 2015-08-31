@@ -1,5 +1,5 @@
 (ns projecteuler.problems.30
-  (:require [projecteuler.problems.library :as lib]))
+  (:require [projecteuler.library :as lib]))
 
 (defn sum-of-powers [power n]
   (->> n

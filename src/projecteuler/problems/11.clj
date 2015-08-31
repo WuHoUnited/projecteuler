@@ -1,5 +1,5 @@
 (ns projecteuler.problems.11
-  (:require [projecteuler.problems.library :as lib]))
+  (:require [projecteuler.library :as lib]))
 
 (defn trim-first-column [matrix]
   (map rest matrix))

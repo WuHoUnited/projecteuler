@@ -1,5 +1,5 @@
 (ns projecteuler.problems.39
-  (:require [projecteuler.problems.library :as lib]
+  (:require [projecteuler.library :as lib]
             [clojure.math.numeric-tower :as math]))
 
 (defn generate-triangles [perimeter-limit]

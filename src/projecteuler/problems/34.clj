@@ -1,5 +1,5 @@
 (ns projecteuler.problems.34
-  (:require [projecteuler.problems.library :as lib]))
+  (:require [projecteuler.library :as lib]))
 
 (defn calculate-limit []
   (let [nine-factorial (lib/factorial 9)

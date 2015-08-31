@@ -1,5 +1,5 @@
 (ns projecteuler.problems.50
-  (:require [projecteuler.problems.library :as lib]))
+  (:require [projecteuler.library :as lib]))
 
 (defn max-prime-in-coll [coll]
   (->> coll
