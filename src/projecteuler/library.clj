@@ -189,3 +189,16 @@
          divisors
          butlast
          sum))))
+
+(defn factors
+  "Returns a sorted seq of the factors of n. Factors can appear twice, for instance
+  (factors 12) => (2 2 3)"
+  [n]
+  (loop [n n
+         [p & ps :as primes] primes
+         factors []]
+    (cond (== 1 n) factors
+          (divisible-by? n p) (recur (quot n p)
+                                     primes
+                                     (conj factors p))
+          :else (recur n ps factors))))
