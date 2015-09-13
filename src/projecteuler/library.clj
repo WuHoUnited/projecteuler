@@ -17,7 +17,7 @@
     "Returns the digits of n"
     [n]
     (if (zero? n)
-      0
+      [0]
       (loop [n n
              acc ()]
         (if (zero? n)
@@ -202,3 +202,18 @@
                                      primes
                                      (conj factors p))
           :else (recur n ps factors))))
+
+(defn digits-to-int
+  "Converts a seq of digits (with a possibly leading 0) to an integer"
+  [digits]
+  (reduce (fn [acc digit]
+            (+' digit
+                (*' acc 10))) 0 digits))
+
+(defn reverse-int
+  "Returns n with its digits reversed"
+  [n]
+  (->> n
+       digits
+       reverse
+       digits-to-int))
