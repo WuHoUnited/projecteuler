@@ -1,5 +1,5 @@
-(ns projecteuler.problems.46
-  (:require [projecteuler.library :as lib]))
+ (ns projecteuler.problems.46
+   (:require [projecteuler.library :as lib]))
 
 (defn odd-composites []
   (->> (iterate (partial + 2) 3)
